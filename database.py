@@ -14,11 +14,6 @@ class Database:
         user = dict_fetchone(self.cur)
         return user
 
-    def get_user_by_id(self):
-        self.cur.execute("""select user_id from weathers""")
-        user_id = dict_fetchall(self.cur)
-        return user_id
-
 def dict_fetchall(cursor):
     columns = [col[0] for col in cursor.description]
     return [
