@@ -1,0 +1,17 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="academy_app1.views.PostView.*" />
+          <option value="telebot.sendmessage" />
+          <option value="crm.views" />
+          <option value="telegram.ext" />
+          <option value="my_app.models.STATUS_CHOICES" />
+          <option value="config.urls.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
