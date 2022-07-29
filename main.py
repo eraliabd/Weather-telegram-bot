@@ -7,7 +7,7 @@ from database import Database
 db = Database("weather.db")
 counter = 0
 
-def start_command(update, context):
+def start_command(update, context):  # botni ishga tushrish funksiyasi
     global counter
     message = update.message.text
     update.message.reply_chat_action(action=ChatAction.TYPING)
