@@ -75,7 +75,7 @@ def message_handler(update, context):
                 caption=f"✅ {viloyat[i]} viloyati uchun ob-havo ma'lumoti:\n\n"
                         f"⛅ Past harorat: {t_min}\n"
                         f"🌞 Yuqori harorat: {t_max}\n"
-                        f"⏰ Vaqt: {now+datetime.datetime(2022, 7, 30, 5, 00, 00)}",
+                        f"⏰ Vaqt: {now}",
                 reply_markup=InlineKeyboardMarkup(button)
             )
 
