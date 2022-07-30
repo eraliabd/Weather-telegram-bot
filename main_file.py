@@ -5,6 +5,7 @@ from telegram import ReplyKeyboardMarkup, BotCommand, KeyboardButton, ChatAction
 # Ob-havo qismi
 import requests
 import datetime
+from pytz import timezone
 from bs4 import BeautifulSoup as BS
 
 def info_command(update, context):
@@ -47,8 +48,7 @@ def message_handler(update, context):
     vil = ["карши", "самарканд", "бухара", "ташкент", "термез", "джизак", "фергана", "наманган", "сырдарья",
            "андижан", "навои", "ургенч", "нукус"]
 
-    date = datetime.datetime.now()
-    now = date.strftime("%Y-%m-%d %H:%M")
+    now_utc = datetime.datetime.now(timezone('Asia/Tashkent')).strftime("%Y-%m-%d %H:%M")
 
     for i in range(len(viloyat)):
         button = [[InlineKeyboardButton(text="Viloyatlar 👉", callback_data="viloyat")],
@@ -74,7 +74,7 @@ def message_handler(update, context):
                 caption=f"✅ {viloyat[i]} viloyati uchun ob-havo ma'lumoti:\n\n"
                         f"⛅ Past harorat: {t_min}\n"
                         f"🌞 Yuqori harorat: {t_max}\n"
-                        f"⏰ Vaqt: {now}",
+                        f"⏰ Vaqt: {now_utc}",
                 reply_markup=InlineKeyboardMarkup(button)
             )
 
