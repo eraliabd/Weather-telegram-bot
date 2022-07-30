@@ -49,7 +49,7 @@ def message_handler(update, context):
 
     date = datetime.datetime.now()
     now = date.strftime("%Y-%m-%d %H:%M")
-    date_add = datetime.time(5, 00, 00)
+    date_add = datetime.datatime(0000, 00, 00, 5, 00, 00)
 
     for i in range(len(viloyat)):
         button = [[InlineKeyboardButton(text="Viloyatlar 👉", callback_data="viloyat")],
