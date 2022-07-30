@@ -88,6 +88,12 @@ def message_handler(update, context):
             reply_markup=ReplyKeyboardMarkup(buttons, resize_keyboard=True, one_time_keyboard=True)
         )
 
+    else:
+        update.message.reply_text(
+            text=f"<b>Bot sizga yoqayotgan bo'lsa xursandmiz 😊</b>",
+            parse_mode="HTML"
+        )
+
 
 def inline_handler(update, context):
     query = update.callback_query
