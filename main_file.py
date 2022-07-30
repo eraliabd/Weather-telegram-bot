@@ -48,7 +48,8 @@ def message_handler(update, context):
            "андижан", "навои", "ургенч", "нукус"]
 
     date = datetime.datetime.now()
-    now = date.strftime("%Y-%m-%d %H:%M:%S")
+    now = date.strftime("%Y-%m-%d %H:%M")
+    date_add = datetime.time(5, 00, 00)
 
     for i in range(len(viloyat)):
         button = [[InlineKeyboardButton(text="Viloyatlar 👉", callback_data="viloyat")],
@@ -74,7 +75,7 @@ def message_handler(update, context):
                 caption=f"✅ {viloyat[i]} viloyati uchun ob-havo ma'lumoti:\n\n"
                         f"⛅ Past harorat: {t_min}\n"
                         f"🌞 Yuqori harorat: {t_max}\n"
-                        f"⏰ Vaqt: {now}",
+                        f"⏰ Vaqt: {now+date_add}",
                 reply_markup=InlineKeyboardMarkup(button)
             )
 
