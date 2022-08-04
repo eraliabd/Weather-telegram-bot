@@ -2,8 +2,8 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Callb
 from telegram import ReplyKeyboardMarkup, BotCommand, KeyboardButton, ChatAction
 from main_file import inline_handler, message_handler, info_command, user_command
 
-from DatabaseDB import weatherdb
-db = weatherdb.weather_db
+from database import Database
+db = Database("weather.db")
 
 TOKEN = "5396468302:AAHqJ2dIzzv1vrQzRxO_b5ENuBkAcs3b53w"
 ADMIN_ID = 696959110
