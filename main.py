@@ -2,11 +2,12 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Callb
 from telegram import ReplyKeyboardMarkup, BotCommand, KeyboardButton, ChatAction
 from main_file import inline_handler, message_handler, info_command, user_command
 
-TOKEN = "5396468302:AAHqJ2dIzzv1vrQzRxO_b5ENuBkAcs3b53w"
-ADMIN_ID = 696959110
+from DatabaseDB import weatherdb
 
-from database import Database
-db = Database("weather.db")
+db = weatherdb.weather_db
+TOKEN = weatherdb.TOKEN
+ADMIN_ID = weatherdb.ADMIN_ID
+
 counter = 0
 
 def start_command(update, context):  # botni ishga tushrish funksiyasi
