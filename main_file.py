@@ -54,7 +54,7 @@ def message_handler(update, context):
 
     for i in range(len(viloyat)):
         button = [[InlineKeyboardButton(text="Viloyatlar 👉", callback_data="viloyat")],
-                  [InlineKeyboardButton(text="Kanalga a'zo bo'ling 😊", url="https://t.me/eralidev_blog")], ]
+                  [InlineKeyboardButton(text="Kanalga a'zo bo'ling 😊", url="https://t.me/eraliabdinazarov")], ]
         if viloyat[i] == message:
             region = requests.get(f'https://sinoptik.ua/погода-{vil[i]}')
             html_t = BS(region.content, 'html.parser')
