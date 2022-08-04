@@ -10,6 +10,7 @@ ADMIN_ID = weatherdb.ADMIN_ID
 
 counter = 0
 
+
 def start_command(update, context):  # botni ishga tushrish funksiyasi
     global counter
     message = update.message.text
@@ -62,6 +63,7 @@ def main():
 
     updater.start_polling()
     updater.idle()
+
 
 if __name__ == "__main__":
     main()

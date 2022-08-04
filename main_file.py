@@ -1,5 +1,4 @@
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackQueryHandler
-from telegram import ReplyKeyboardMarkup, BotCommand, KeyboardButton, ChatAction, ReplyKeyboardRemove, \
+from telegram import ReplyKeyboardMarkup, KeyboardButton, ChatAction, ReplyKeyboardRemove, \
     InlineKeyboardButton, InlineKeyboardMarkup
 
 # Ob-havo qismi
@@ -8,8 +7,10 @@ import datetime
 from pytz import timezone
 from bs4 import BeautifulSoup as BS
 
+
 def info_command(update, context):
     update.message.reply_text(text="Ushbu bot sizga ob-havo haqida ma'lumot beradi!")
+
 
 def user_command(update, context):
     message = update.message.text
@@ -21,6 +22,7 @@ def user_command(update, context):
         text=f"{update.message.from_user.first_name}, viloyatlar bo'limiga o'ting 👇\n",
         reply_markup=ReplyKeyboardMarkup(buttons, resize_keyboard=True, one_time_keyboard=True)
     )
+
 
 def message_handler(update, context):
     message = update.message.text
@@ -52,7 +54,7 @@ def message_handler(update, context):
 
     for i in range(len(viloyat)):
         button = [[InlineKeyboardButton(text="Viloyatlar 👉", callback_data="viloyat")],
-                 [InlineKeyboardButton(text="Kanalga a'zo bo'ling 😊", url="https://t.me/eralidev_blog")],]
+                  [InlineKeyboardButton(text="Kanalga a'zo bo'ling 😊", url="https://t.me/eralidev_blog")], ]
         if viloyat[i] == message:
             region = requests.get(f'https://sinoptik.ua/погода-{vil[i]}')
             html_t = BS(region.content, 'html.parser')
