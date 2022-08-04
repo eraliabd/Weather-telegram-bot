@@ -3,11 +3,11 @@ from telegram import ReplyKeyboardMarkup, BotCommand, KeyboardButton, ChatAction
 from main_file import inline_handler, message_handler, info_command, user_command
 
 from DatabaseDB import weatherdb
-
 db = weatherdb.weather_db
-TOKEN = weatherdb.TOKEN
-ADMIN_ID = weatherdb.ADMIN_ID
 
+from config import TOKEN, ADMIN
+TOKEN = TOKEN
+ADMIN_ID = ADMIN
 counter = 0
 
 
